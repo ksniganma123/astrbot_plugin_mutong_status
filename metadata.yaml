@@ -1,0 +1,12 @@
+name: astrbot_plugin_mutong_status
+desc: 木桶面板（Pterodactyl）服务器状态日报：每日定时在指定群推送在线人数、CPU、内存、网络状态
+version: 1.1.0
+author: K5NGM
+repo: https://github.com/ksniganma123/astrbot_plugin_mutong_status
+display_name: 木桶面板状态日报
+short_desc: 每日定时播报 MC 服务器在线人数 / CPU / 内存 / 网络
+astrbot_version: ">=4.0.0"
+support_platforms:
+  - aiocqhttp
+  - qq_official
+  - qq_official_webhook

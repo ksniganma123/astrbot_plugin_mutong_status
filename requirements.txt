@@ -1,0 +1,4 @@
+# AstrBot 自带的依赖，一般无需额外安装。
+# 若面板控制台兜底不可用，可手动安装 websockets。
+aiohttp>=3.9
+websockets>=11

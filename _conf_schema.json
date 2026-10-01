@@ -1,0 +1,106 @@
+{
+  "enabled": {
+    "description": "启用每日定时推送",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后仅保留手动 /mc状态 查询"
+  },
+  "push_time": {
+    "description": "每日推送时间",
+    "type": "string",
+    "default": "21:00",
+    "hint": "24 小时制，格式 HH:MM，例如 21:00、09:30"
+  },
+  "timezone": {
+    "description": "时区",
+    "type": "string",
+    "default": "Asia/Shanghai",
+    "hint": "国内服务器保持默认即可"
+  },
+  "target_groups": {
+    "description": "推送目标群",
+    "type": "list",
+    "default": [],
+    "hint": "填写群号（使用下面的默认平台）或完整 UMO（如 aiocqhttp:GroupMessage:123456）。QQ 官方机器人要填 group_openid，不是群号，推荐在群里发送 /mc推送 绑定 自动绑定"
+  },
+  "default_platform": {
+    "description": "默认平台 ID",
+    "type": "string",
+    "default": "aiocqhttp",
+    "hint": "仅当 target_groups 里填写纯群号时使用；QQ 机器人一般为 aiocqhttp，QQ 官方机器人填 qq_official"
+  },
+  "panel_base_url": {
+    "description": "木桶面板地址",
+    "type": "string",
+    "default": "https://vat-panel.mutong1.com",
+    "hint": "面板首页地址，不要带 /api/client"
+  },
+  "api_key": {
+    "description": "面板 Client API 密钥",
+    "type": "string",
+    "default": "",
+    "hint": "面板 → 账户设置 → API Credentials → 创建 API 密钥，形如 ptlc_xxxxxxxx。留空则只能查询在线人数和延迟"
+  },
+  "server_id": {
+    "description": "服务器标识符",
+    "type": "string",
+    "default": "",
+    "hint": "面板地址栏 /server/xxxxxxxx 中的那一段，例如 Nka7aRk1"
+  },
+  "server_address": {
+    "description": "服务器地址（可选）",
+    "type": "string",
+    "default": "",
+    "hint": "用于查询在线人数和延迟，格式 域名或IP:端口，例如 play.example.com:25565。留空则自动使用面板的默认分配地址"
+  },
+  "network_sample_interval": {
+    "description": "网络测速采样间隔（秒）",
+    "type": "float",
+    "default": 2.0,
+    "hint": "间隔两次读取面板流量计数，计算实时上下行速率，取值 0.5~10"
+  },
+  "request_timeout": {
+    "description": "请求超时（秒）",
+    "type": "int",
+    "default": 10,
+    "hint": "面板接口和 MC 状态查询的超时时间"
+  },
+  "verify_ssl": {
+    "description": "校验证书",
+    "type": "bool",
+    "default": true,
+    "hint": "面板使用自签名证书时才需要关闭"
+  },
+  "console_fallback": {
+    "description": "控制台兜底取在线人数",
+    "type": "bool",
+    "default": true,
+    "hint": "当直连服务器查询人数失败时，通过面板控制台执行 list 命令解析人数（需要 websocket 权限）"
+  },
+  "mention_all": {
+    "description": "推送时 @全体成员",
+    "type": "bool",
+    "default": false,
+    "hint": "仅 aiocqhttp 类平台支持；QQ 官方机器人接口不支持 @全体成员，会自动忽略"
+  },
+  "report_title": {
+    "description": "日报标题",
+    "type": "string",
+    "default": "🎮 木桶面板 · 服务器日报"
+  },
+  "include_disk": {
+    "description": "报告显示硬盘占用",
+    "type": "bool",
+    "default": true
+  },
+  "include_uptime": {
+    "description": "报告显示运行时长",
+    "type": "bool",
+    "default": true
+  },
+  "include_motd": {
+    "description": "报告显示版本与 MOTD",
+    "type": "bool",
+    "default": true
+  }
+}
